@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Practice11</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="dataOutput">Вывод данных</string>
+    <string name="dataInput">Ввод данных</string>
+    <string name="date">Дата</string>
+    <string name="dayOfTheWeek">День недели</string>
+    <string name="dayTemperature">Температура днем</string>
+    <string name="nightTemperature">Температура ночью</string>
+    <string name="save">Сохранить</string>
+</resources>
