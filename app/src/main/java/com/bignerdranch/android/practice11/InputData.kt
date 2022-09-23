@@ -29,7 +29,7 @@ class InputData : AppCompatActivity()
 
         saveButton.setOnClickListener{
             addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
-            Log.d("data", weather.toString())
+            Log.d("day", weather.toString())
         }
     }
 
