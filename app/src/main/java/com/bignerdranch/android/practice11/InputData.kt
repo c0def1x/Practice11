@@ -40,6 +40,17 @@ class InputData : AppCompatActivity()
             {
                 Toast.makeText(applicationContext,"Заполните все поля!", Toast.LENGTH_SHORT).show()
             }
+
+            if(dayTemperature.text.toString()[0] == '+' || dayTemperature.text.toString()[0] == '-'
+                || nightTemperature.text.toString()[0] == '+' || nightTemperature.text.toString()[0] == '-')
+            {
+                addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
+                Log.d("day", weather.toString())
+            }
+            else
+            {
+                Toast.makeText(applicationContext,"Неккоректно введена температура!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
