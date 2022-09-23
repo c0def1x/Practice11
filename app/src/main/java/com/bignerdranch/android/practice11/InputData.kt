@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -28,8 +29,17 @@ class InputData : AppCompatActivity()
         nightTemperature = findViewById(R.id.editTextTextPersonName10)
 
         saveButton.setOnClickListener{
-            addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
-            Log.d("day", weather.toString())
+            if(date.text.toString() != ""
+                && dayTemperature.text.toString() != ""
+                && nightTemperature.text.toString() != "")
+            {
+                addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
+                Log.d("day", weather.toString())
+            }
+            else
+            {
+                Toast.makeText(applicationContext,"Заполните все поля!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
