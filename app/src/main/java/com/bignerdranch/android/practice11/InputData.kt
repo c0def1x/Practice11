@@ -28,13 +28,19 @@ class InputData : AppCompatActivity()
         dayTemperature = findViewById(R.id.editTextTextPersonName9)
         nightTemperature = findViewById(R.id.editTextTextPersonName10)
 
+        fun addingDay()
+        {
+            addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
+            Log.d("day", weather.toString())
+        }
+
+
         saveButton.setOnClickListener{
             if(date.text.toString() != ""
                 && dayTemperature.text.toString() != ""
                 && nightTemperature.text.toString() != "")
             {
-                addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
-                Log.d("day", weather.toString())
+                addingDay()
             }
             else
             {
@@ -44,8 +50,7 @@ class InputData : AppCompatActivity()
             if(dayTemperature.text.toString()[0] == '+' || dayTemperature.text.toString()[0] == '-'
                 || nightTemperature.text.toString()[0] == '+' || nightTemperature.text.toString()[0] == '-')
             {
-                addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
-                Log.d("day", weather.toString())
+                addingDay()
             }
             else
             {
