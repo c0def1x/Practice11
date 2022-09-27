@@ -8,18 +8,18 @@ import com.google.gson.reflect.TypeToken
 
 class OutputData : AppCompatActivity()
 {
-    private val weather:MutableList<String> = mutableListOf()
+    private val weathers:MutableList<Day> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_output_data)
-        getWeather()
-        weather.forEach{
+        getWeathers()
+        weathers.forEach{
             Log.d("data", it.toString())
         }
     }
 
-    private fun getWeather()
+    private fun getWeathers()
     {
         val preferences = getSharedPreferences("pref", MODE_PRIVATE)
         var json:String = ""
@@ -30,9 +30,8 @@ class OutputData : AppCompatActivity()
         else
         {
             json = preferences.getString("json", "NOT_JSON").toString()
-            val tempList = Gson().fromJson<List<Day>>(json, object: TypeToken<List<Day>>(){}.type)
         }
-
+        val tempList = Gson().fromJson<List<Day>>(json, object: TypeToken<List<Day>>(){}.type)
+        weathers.addAll(tempList)
     }
-
 }

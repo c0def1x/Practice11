@@ -11,7 +11,7 @@ import com.google.gson.reflect.TypeToken
 
 class InputData : AppCompatActivity()
 {
-    private var weather:MutableList<Day> = mutableListOf()
+    private var weathers:MutableList<Day> = mutableListOf()
     private lateinit var saveButton: Button
     private lateinit var date:EditText
     private lateinit var dayTemperature:EditText
@@ -30,15 +30,12 @@ class InputData : AppCompatActivity()
 
         fun addingDay()
         {
-            addDay(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
-            Log.d("day", weather.toString())
+            addWeather(date.text.toString(), dayTemperature.text.toString(), nightTemperature.text.toString())
+            Log.d("day", weathers.toString())
         }
 
-
         saveButton.setOnClickListener{
-            if(date.text.toString() != ""
-                && dayTemperature.text.toString() != ""
-                && nightTemperature.text.toString() != "")
+            if(date.text.isNotEmpty() && dayTemperature.text.isNotEmpty() && nightTemperature.text.isNotEmpty())
             {
                 addingDay()
             }
@@ -46,39 +43,24 @@ class InputData : AppCompatActivity()
             {
                 Toast.makeText(applicationContext,"Заполните все поля!", Toast.LENGTH_SHORT).show()
             }
-
-            if(dayTemperature.text.toString()[0] == '+' || dayTemperature.text.toString()[0] == '-'
-                || nightTemperature.text.toString()[0] == '+' || nightTemperature.text.toString()[0] == '-')
-            {
-                addingDay()
-            }
-            else
-            {
-                Toast.makeText(applicationContext,"Неккоректно введена температура!", Toast.LENGTH_SHORT).show()
-            }
         }
     }
 
     private fun getWeathers()
     {
         val preferences = getSharedPreferences("pref", MODE_PRIVATE)
-        var json:String = ""
+        var json = ""
         if(!preferences.contains("json"))
-        {
             return
-        }
         else
-        {
             json = preferences.getString("json", "NOT_JSON").toString()
-        }
         val tempList = Gson().fromJson<List<Day>>(json, object: TypeToken<List<Day>>(){}.type)
-        weather.addAll(tempList)
+        weathers.addAll(tempList)
     }
 
-    private fun addDay(date: String, dayTemperature: String, nightTemperature: String)
+    private fun addWeather(date: String, dayTemperature: String, nightTemperature: String)
     {
         val day = Day(date, dayTemperature, nightTemperature)
-        weather.add(day)
-        val preferences = getSharedPreferences("pref", MODE_PRIVATE)
+        weathers.add(day)
     }
 }
