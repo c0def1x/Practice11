@@ -23,10 +23,10 @@ class InputData : AppCompatActivity()
         setContentView(R.layout.activity_input_data)
         getWeathers()
 
-        saveButton = findViewById(R.id.SaveButton)
-        date = findViewById(R.id.editTextTextPersonName7)
-        dayTemperature = findViewById(R.id.editTextTextPersonName9)
-        nightTemperature = findViewById(R.id.editTextTextPersonName10)
+        saveButton = findViewById(R.id.saveButton)
+        date = findViewById(R.id.dateInput)
+        dayTemperature = findViewById(R.id.dayTemperatureInput)
+        nightTemperature = findViewById(R.id.nightTemperatureInput)
 
         fun addingDay()
         {
