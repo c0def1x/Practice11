@@ -1,5 +1,6 @@
 package com.bignerdranch.android.practice11
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -38,6 +39,9 @@ class InputData : AppCompatActivity()
             if(date.text.isNotEmpty() && dayTemperature.text.isNotEmpty() && nightTemperature.text.isNotEmpty())
             {
                 addingDay()
+                Toast.makeText(applicationContext,"Сохранено", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
             else
             {
