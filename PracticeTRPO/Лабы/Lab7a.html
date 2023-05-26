@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="windows-1251">
+    <link rel="stylesheet" href="style.css">
+    <link href="Labs/Lab_style.css" rel="stylesheet">
+        </head>
+        <body>
+            <div id="container">
+                <div id="navigation">
+                    <a href="index.html">
+                        <div class="nav_button">
+                            <div class="nav_left"><img src="image/home.png"></div>
+                            <div class="nav_right one">Главная</div>
+                        </div>
+                    </a>
+                    <a href="info.html">
+                        <div class="nav_button">
+                            <div class="nav_left"><img src="image/instruct.png"></div>
+                            <div class="nav_right one">Инструкции</div>
+                        </div>
+                    </a>
+                    <a href="teory.html">
+                        <div class="nav_button">
+                            <div class="nav_left"><img src="image/library.png"></div>
+                            <div class="nav_right two">Теоретический материал</div>
+                        </div>
+                    </a>
+                    <a href="labs.html">
+                        <div class="nav_button" style="color:#ff6a00">
+                             <div class="nav_left"><img src="image/labs.png"></div>
+                            <div class="nav_right two">Лабораторные работы</div>
+                        </div>
+                    </a>
+                    <a href="adds.html">
+                        <div class="nav_button">
+                             <div class="nav_left"><img src="image/lupe.png"></div>
+                            <div class="nav_right two">Дополнительные материалы</div>
+                        </div>
+                    </a>
+                </div>
+
+				
+				<div class="left">
+				<!--Навигация внутри страницы (якоря)-->
+                    <div class="main header" style="margin: auto;">
+                        <h1>Автоматизированное тестирование средствами Selenium IDE Plugin для Firefox</h1>
+						<div class="local">
+						<a href="#up"><div class="local_nav">Вверх</div></a>
+						<a href="#down"><div class="local_nav">Вниз</div></a>
+						<div class="local_nav_bord"></div>
+						<a href="#end"><div class="local_nav">Отчет</div></a>
+						<a href="#test"><div class="local_nav">Создание теста</div></a>
+						<a href="#install"><div class="local_nav">Установка</div></a>
+						<a href="Lab7.html"><div class="local_nav">Предыдущая</div></a>
+						</div>
+                    </div>					
+
+                <div class="content" style="overflow: scroll;">
+					<div class="incontent">
+                    <h1 id="up"><span id="install">Установка Selenium IDE Plugin для Mozilla Firefox</h1>
+                    <p><b>Цель:</b>
+					Рассмотреть инструментарий приложения Selenium IDE Plugin для браузера Mozila Firefox для автоматизированного тестирования приложений.<p>
+					<h2>Установка Selenium IDE Plugin</h2>
+                    <p>Запустите браузер Firefox и скачайте IDE с <a href="http://seleniumhq.org/download/">веб-сайтаSeleniumHQ</a>.</p>
+                    <p >Если вы берете уже ранее скачанный файл ide plugin, то
+                        в браузере в строке ввода укажите путь к файлу с расширением .xpi
+                        (например, file:///C:/Users/User1/Downloads/selenium-ide-2.8.0.xpi)</p>
+                    <p>Firefox предостерегает вас от установки
+                        дополнений с незнакомых ресурсов, потому для продолжения установки нажмите
+                        “Разрешить”, как показано на скриншоте.</p>
+                    <p style='text-align:center'><img border=0 width=459 height=209 src="Labs/Lab7a.files/image001.png"></p>
+                    <p>Далее откроется окно установки дополнения для браузера Firefox.</p>
+                    <p style='text-align:center'><img border=0 width=468 height=321 src="Labs/Lab7a.files/image002.jpg"></p>
+                    <p>Выберите “Установить сейчас”. Появится окно
+                        дополнений Firefox, сначала оно будет показывать индикатор выполнения, а после
+                        окончания скачивания появится сообщение о необходимости перезагрузки браузера. После
+                        чего необходимо перезагрузить браузер. После открытия браузера появиться значок
+                        на панели инструментов</p>
+                    <p style='text-align:center'><img border=0 width=343 height=82 src="Labs/Lab7a.files/image003.png"></p>
+                    <p >Чтобы запустить Selenium IDE, просто выберите его на панели инструментов браузера
+                            Firefox. Дополнение откроет пустое окно, предназначенное для редактирования тестовых
+                            сценариев, а также меню для их загрузки или сохранения.</p>
+							
+					<p style="border:solid; border-color: #52999D;"><b>Задание 1:</b>
+					<br>Произведите установку Selenium IDE Plugin в браузер Mozilla Firefox</p>
+							
+                    <h2 id="test">Создание тест-кейсов и тест-планов в SeleniumIDE Plugin</h2>
+                    <h2>Создание, выполнение и редактирование тест-кейса</h2>
+                    <p>
+                        Запустите
+                        браузер Mozilla Firefox и откройте плагин SeleniumIDE Plugin на панели инструментов. Если
+                        его нет, то необходимо включить его в настройках.</p>
+                    <p style='text-align:center;'><img border=0 width=534 height=327 src="Labs/Lab7a.files/image004.jpg"></p>
+                    <p>Убедитесь,
+                        что кнопка записи («record») нажата. Также укажите baseURL «google.com» в нужной строке.</p>
+                    <p>
+                        Далее
+                        в браузере откройте страницу google.com,
+                        и в поисковой строке наберите запрос «калькулятор» и нажмите кнопку поиска.
+                        После чего сохраните тест в рабочей папке с названием «open».</p>
+                   <p>Теперь
+                        создадим второй тест, который будет непосредственно работать с самим
+                        калькулятором. В меню «fail» выберите пункт «New TestCase», после чего убедитесь, что
+                        кнопка записи (record) нажата.</p>
+                    <p>Далее перейдите на страницу калькулятора на сайте Google.ru, на странице должен открыться калькулятор следующего вида</p>
+                    <p style='text-align:center;'><img border=0 width=409 height=270 src="Labs/Lab7a.files/image005.jpg"></p>
+                    <p>Далее
+                        самостоятельно произведите сложение, вычитание, умножение и деление в
+                        калькуляторе.</p>
+                    <p>Далее останавливаем запись теста нажатием кнопки запись («record»).</p>
+                    <p>После
+                        чего сохраните тест с именем «calc», закройте страницу
+                        калькулятора в браузере.</p>
+                    <p>Теперь
+                        откроем оба теста, для того, чтобы можно было провести несколько тест-кейсов
+                        для одной страницы. Для добавления нескольких тест-кейсов воспользуйтесь
+                        кнопкой «Add testcase» в меню «file»</p>
+                    <p style='text-align:center;'><img border=0 width=623 height=401 src="Labs/Lab7a.files/image006.jpg"></p>
+                    <p>Выставить скорость на “slow”,
+                        отключить кнопку “запись” если она включена,  далее запустить оба теста нажав
+                        на кнопку “Запустить все”.</p>
+                    <p>В ходе выполнения теста в
+                        браузере должен открыться калькулятор на странице «google.ru», после чего второй тест должен показать ошибку
+                        подключения вызванную конфликтом между запущенной страницей и базовым URL-адресом страницы.
+                    </p>
+                    <p style='text-align:center;'><img border=0 width=623 height=539 src="Labs/Lab7a.files/image007.jpg"></p>
+                    <p>После выполнения тестов
+                        можно узнать результаты тестирования. В разделе TestCase можно увидеть подсвеченные
+                        зеленым цветом удачно пройденные тесты, а красным не пройденные. Ниже указано
+                        количество запущенных тестов и количество не пройденных тестов.  После чего в
+                        разделе Log можно увидеть информацию о ходе выполнения
+                        программы, в данном случае программа не может подключиться к странице.</p>
+					<hr size=3 width=90% color=black>
+					<h2 id="end">Контрольное задание</h2>
+					<p id="down">
+						Полученный результат продемонстрируйте преподователю.
+					</p>	
+                </div>
+			</div>
+            </div>
+			</div>
+         </body>
+        </html>

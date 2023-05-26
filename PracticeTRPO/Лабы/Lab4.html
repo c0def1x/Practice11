@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="windows-1251">
+    <link rel="stylesheet" href="style.css">
+    <link href="Labs/Lab_style.css" rel="stylesheet">
+        </head>
+        <body>
+            <div id="container">
+                <div id="navigation">
+                    <a href="index.html">
+                        <div class="nav_button">
+                            <div class="nav_left"><img src="image/home.png"></div>
+                            <div class="nav_right one">Главная</div>
+                        </div>
+                    </a>
+                    <a href="info.html">
+                        <div class="nav_button">
+                            <div class="nav_left"><img src="image/instruct.png"></div>
+                            <div class="nav_right one">Инструкции</div>
+                        </div>
+                    </a>
+                    <a href="teory.html">
+                        <div class="nav_button">
+                            <div class="nav_left"><img src="image/library.png"></div>
+                            <div class="nav_right two">Теоретический материал</div>
+                        </div>
+                    </a>
+                    <a href="labs.html">
+                        <div class="nav_button" style="color:#ff6a00">
+                             <div class="nav_left"><img src="image/labs.png"></div>
+                            <div class="nav_right two">Лабораторные работы</div>
+                        </div>
+                    </a>
+                    <a href="adds.html">
+                        <div class="nav_button">
+                             <div class="nav_left"><img src="image/lupe.png"></div>
+                            <div class="nav_right two">Дополнительные материалы</div>
+                        </div>
+                    </a>
+                </div>
+
+				
+				<div class="left">
+				<!--Навигация внутри страницы (якоря)-->
+                    <div class="main header" style="margin: auto;">
+                        <h1>Создание модульных тестов в MS Visual Studio</h1>
+						<div class="local">
+						<a href="#up"><div class="local_nav">Вверх</div></a>
+						<a href="#down"><div class="local_nav">Вниз</div></a>
+						<div class="local_nav_bord"></div>
+						<a href="Lab5.html"><div class="local_nav">Следующая</div></a>
+						<a href="#end"><div class="local_nav">Отчет</div></a>
+						<a href="Lab3.html"><div class="local_nav">Предыдущая</div></a>
+						</div>
+                    </div>					
+
+                <div class="content" style="overflow: scroll;">
+					<div class="incontent">
+					
+                    <h1 id="up">Создание модульных тестов в MS Visual Studio</h1>
+
+                    <p>
+                        <b>Цель: </b>приобретение
+                        практических навыков модульного тестирования программ средствами Visual Studio.</p>
+                    <p><b>Модульное тестирование</b>, или юнит-тестирование (англ. unit testing) — процесс
+                            в программировании, позволяющий проверить на корректность отдельные модули
+                            исходного кода программы.</p>
+                    <p><b>Модульный тест</b>
+                            — это автоматизированный фрагмент кода, который
+                            вызывает тестируемый метод или класс, а затем проверяет несколько предположений
+                            относительно логического поведения метода или класса Джефф Левинсон).</p>
+                    <h2>Подключение тестового решения</h2>
+                    <p>При модульном тестировании первым шагом выбирается метод,
+                        который будет тестироваться.</p>
+                    <p>В качестве примера разберем метод нахождения корней
+                        квадратного уравнения.</p>
+                    <p style='text-align:center;'><img width=623 height=114 src="Labs/Lab4.files/image001.jpg"></p>
+                    <p>Далее необходимо добавить «Unit-test project»
+                        в Решение приложения. Для этого необходимо нажать правой клавишей на Решении (solution) в Обозревателе решений.</p>
+                    <p style='text-align:center;'><img width=292 height=333 src="Labs/Lab4.files/image002.png"></p>
+                    <p>Из выпадающего меню выбрать пункт «Add»
+                        (добавить), добавляем новый проект (newproject), и в открывшемся окне
+                        выбираем Unit TestProject.</p>
+                    <p style='text-align:center;'><img width=485 height=292 src="Labs/Lab4.files/image003.jpg"></p>
+                    <p> Далее в браузере решений (SolutionExplorer), в разделе тестов,
+                        необходимо в разделе References (ссылки) выбрать добавление нового решения.
+                        После чего откроется менеджер решений.</p>
+                    <p style='text-align:center;'><img width=542 height=286 id="Рисунок 6" src="Labs/Lab4.files/image004.jpg"></p>
+                    <p>В разделе Решения (Solution)
+                        выбираем пункт Проекты (Project). Далее устанавливаем
+                        галочку напротив нужного решения и нажимаем «ОК». В обозревателе решений,
+                        появится ссылка на проект в разделе Ссылки (References).</p>
+                    <p style='text-align:center;'><img width=246 height=273 src="Labs/Lab4.files/image005.jpg"></p>
+					
+					
+					<p style="border:solid; border-color: #52999D;"><b>Задание 1:</b>
+					<br>Самостоятельно откройте тестовое
+                                приложение соответствующее вашему варианту с помощью Visual Studio и добавьте в проект модульный тест. Вариант задания выбирается по последним двум цифрам в студенческом билете. Тестовое приложение находится в папке "Programms".</p>
+					
+                    <h2>Создание модульного теста</h2>
+                    <p>Следующим шагом будет создание модульного теста. Для
+                        редактирования тестового класса, открываем класс UnitTest1.cs. В начале
+                        необходимо указать директиву с названием пространства имен класса, который
+                        подвергается тестированию. Название пространства имен указывается после слова namespace в тестируемом классе.</p>
+                    <p>Далее изменяем тестовый метод TestMethod1(), который
+                        создается автоматически. Для этого напишем следующий код в тело метода.</p>
+                    <p style='text-align:center'><img width=404 height=307 id="Рисунок 18" src="Labs/Lab4.files/image006.png"></p>
+                    <p>Сперва указываются переменные, которые будут передаваться в метод в качестве аргументов.</p>
+                    <p>Далее создается коллекция значений expected, эти значения задаются проверяющим, и они известны до начала тестирования.</p>
+                    <p>После чего создается коллекция полученных результатов actual, которая получает значения из проверяемого метода.</p>
+                    <p>Далее с помощью класса CollectionAssert сравниваются коллекции объектов.</p>
+                    <p class="attention">Если возникает ошибка защищенности метода или
+                        класса, то стоит сделать метод и/или класс публичным</p>
+						
+						
+					<p style="border:solid; border-color: #52999D;"><b>Задание 2:</b>
+					<br>Для тестового приложения выделите метод, который необходимо протестировать на основе спецификации, а также напишите для него положительный модульный тест по аналогии с примером.</p>
+					
+						
+                    <h2>Работа с Обозревателем тестов</h2>
+                    <p>Для того чтобы работать с модульными тестами, нам
+                        понадобиться открыть окно Test Exlorer-а: Test -&gt; Windows -&gt; Test
+                        Explorer. Если в нем нет написанных тестов, то необходимо собрать решение.</p>
+                    <p style='text-align:center;'><img border=0 width=320 height=121 src="Labs/Lab4.files/image007.png"></p>
+                    <p>В Test Explorer можно запускать различные группы тестов:</p>
+					<ol>
+						<li>Все тесты.</li>
+						<li>Только не прошедшие.</li>
+						<li>Не запускавшиеся.</li>
+						<li>Только прошедшие.</li>
+					</ol>
+					
+                    <p>Из контекстного меню на тесте, можно запустить конкретный
+                        тест, перейти к его описанию, провести отладку или получить анализ выполнения.
+                        Также имеется возможность запускать тесты принудительно, после выполнения
+                        каждого нового построения решения.</p>
+                    <p style='text-align:center;'><img border=0 width=514 height=405 src="Labs/Lab4.files/image008.png"></p>
+                    <p>Включаем эту опцию и перестраиваем наше решение:</p>
+					<p style='text-align:center;'><img border=0 width=202 height=178 src="Labs/Lab4.files/image009.png"></p>
+                    <p>Выполнение тестов происходит в
+                        отдельном потоке, что позволяет производить параллельное тестирование программы
+                        с помощью ручного тестирования.</p>
+						
+					<p style="border:solid; border-color: #52999D;"><b>Задание 3:</b>
+					<br>Проверьте созданный метод с помощью Обозревателя тестов</p>
+						
+                    <h2>Создание набора тестов</h2>
+                    <p>На данном этапе у нас имеется
+                        один тест, который проверяет один тестовый набор. Для проверки нескольких
+                        тестовых наборов необходимо создать новые методы, проверяющие оставшиеся тестовые
+                        наборы.</p>
+                    <p>Для приведенного примера имеет смысл проверить несколько вариантов с различными выходными параметрами:</p>
+					<br>
+					<p><i>первыйтестовый случай, когда у нас нет корней:</i></p>
+                    <p>[TestMethod]</p>
+                    <p>public void NotRootsTest()</p>
+                    <p>{</p>
+                    <p>double a = 1;</p>
+                    <p>double b = 4;</p>
+                    <p>double c = 5;</p>
+                    <p>double[] actual =SqrtRoots.Calc(a, b, c);</p>
+                    <p>Assert.IsNotNull(actual);</p>
+                    <p>Assert.IsTrue(actual.GetLength(0) == 0);</p>
+                    <p>}</p>
+					<br>
+                    <p><i>второй, 2 одинаковых корня:</i></p>
+                    <p>[TestMethod]</p>
+                    <p>public voidOneRootTest()</p>
+                    <p>{</p>
+                    <p>double a = 1;</p>
+                    <p>double b = -4;</p>
+                    <p>double c = 4;</p>
+                    <p>double[] expected = { 2 };</p>
+                    <p>double[] actual =SqrtRoots.Calc(a, b, c);</p>
+                    <p>CollectionAssert.AreEqual(expected, actual);</p>
+                    <p>}</p>
+					
+					<br>
+                    <p><i>третий, 2 различных корня:</i></p>
+                    <p>[TestMethod]</p>
+                    <p>public void DoubleRootsTest()</p>
+                    <p>{</p>
+                    <p>double a = 1;</p>
+                    <p>double b = -5;</p>
+                    <p>double c = 4;</p>
+                    <p>double[] expected = { 4, 1 };</p>
+                    <p>double[] actual = SqrtRoots.Calc(a, b, c);</p>
+                    <p>CollectionAssert.AreEqual(expected,actual);</p>
+                    <p>}</p>
+                    <p>Для
+                        упрощения создания новых тестовых методов, можно скопировать первый тестовый
+                        метод, но обязательно необходимо изменить его имя, а также перед объявлением
+                        метода указать принадлежность метода к тестовым методам, дописав перед ним [TestMethod].А также изменить входные
+                        параметры.</p>
+                    <p>После того, как все тесты созданы, имеет смысл запустить их на проверку.</p>
+                    <p>По
+                        окончании тестирования все тесты будут разделены на пройденные и не пройденные,
+                        и подсвечены соответствующим цветом. При нажатии на не пройденный тест можно
+                        увидеть сообщение об ошибке, из-за которой тестирование завершилось неудачей.</p>
+                    <p style='text-align:center;'><img border=0 width=202 height=320 src="Labs/Lab4.files/image010.png"></p>
+					
+											
+					<p style="border:solid; border-color: #52999D;"><b>Задание 4:</b>
+					<br>Создайте остальные модульные тесты исходя из данных полученных в лабораторной <a class="report" href="Lab3.html">«Функциональное тестирование»</a> и проведите тестирование с помощью Обозревателя тестов.</p>
+					
+					
+					<hr size=3 width=90% color=black>
+                    <h2 id="end">Контрольное задание</h2>
+                    <p id="down">Самостоятельно
+                        на основе приведенного примера, реализуйте набор Unit-тестов
+                        для метода из тестируемого приложения, соответствующего вашему варианту. Вариант задания выбирается по последним двум цифрам в студенческом билете. В качестве тестовых вариантов
+                        используйте материалы подготовленные в лабораторной <a class="report" href="Lab3.html">«Функциональное тестирование»</a>.</p>
+                </div>
+				</div>
+			</div>
+        </div>
+	</body>
+</html>
